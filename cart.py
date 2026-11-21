@@ -29,6 +29,9 @@ class ShoppingCart:
         return True
 
     def remove_item(self, sku, quantity=None):
+        if quantity < 0:
+            print("Attempting to remove negative items")
+            return False
         for line in self.lines:
             if line.sku == sku:
                 if quantity is None or quantity >= line.quantity:
