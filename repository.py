@@ -1,5 +1,6 @@
 """SQLite persistence. Contains deliberate reliability/security problems."""
 import sqlite3
+
 from models import Product
 
 

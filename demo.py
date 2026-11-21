@@ -1,8 +1,8 @@
 """Run using synthetic data only. Not executed on import."""
-from repository import StoreRepository
 from cart import ShoppingCart
-from payments import FakePaymentGateway
 from checkout import CheckoutService
+from payments import FakePaymentGateway
+from repository import StoreRepository
 from setup_db import initialize
 
 
