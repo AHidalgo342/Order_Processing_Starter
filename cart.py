@@ -52,8 +52,8 @@ class ShoppingCart:
             amount *= 0.8
         elif code == 'SAVE15':
             amount -= 15
-        elif code == 'FREESHIP':
-            print('Shipping is free')
+        # elif code == 'FREESHIP':
+        #     print('Shipping is free')
         else:
             print('Invalid coupon')
             return False
