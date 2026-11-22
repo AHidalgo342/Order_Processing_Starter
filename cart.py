@@ -1,4 +1,6 @@
 """Business logic. Several design and correctness issues are intentional."""
+from decimal import Decimal
+
 from models import CartLine
 
 
@@ -43,7 +45,7 @@ class ShoppingCart:
         return False
 
     def subtotal(self):
-        return sum(line.unit_price * line.quantity for line in self.lines)
+        return sum(Decimal(line.unit_price) * line.quantity for line in self.lines)
 
     def total(self):
         if self.discounted_total is not None:
@@ -53,13 +55,13 @@ class ShoppingCart:
     def apply_discount(self, code):
         amount = self.total()
         if code == 'WELCOME10':
-            amount *= 0.9
+            amount *= Decimal('0.9')
         elif code == 'STUDENT20':
-            amount *= 0.8
+            amount *= Decimal('0.8')
         elif code == 'SAVE15':
-            amount -= 15
-        # elif code == 'FREESHIP':
-        #     print('Shipping is free')
+            amount -= Decimal(15)
+        elif code == 'FREESHIP':
+            print('Shipping is free')
         else:
             print('Invalid coupon')
             return False
