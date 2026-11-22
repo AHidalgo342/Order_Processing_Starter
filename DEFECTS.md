@@ -8,3 +8,6 @@
 6. cart.py no add_item negative quantity check. possible to grab negative items. Added lines 14-16.
 7. cart.py no remove_item negative quantity check. possible to remove negative items. Added lines 32-34.
 8. Checkout.py Reorder also fixed timing error where payment delay could cause the repo to incorrectly update quantities before a decline was detected.
+
+Test Results:
+![terminal output of a test command](image.png)
